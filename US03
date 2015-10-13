@@ -1,0 +1,29 @@
+___author___= 'Yaw Adu-Boahene Jr.'
+
+from datetime import datetime #importing module to use datetime method
+
+fhand = open ('/Users/darth_yaw/Documents/UseCases/Alexander-Graham-Bell-5-Oct-2015.ged','r')    #accesses file and opens to read
+x= fhand.readlines() #reads file as list
+fhand.close () 
+
+host= None
+pos= None
+for line in x[13:21]: #slicing to get specific block of strings in list
+	if '2 DATE' in line:
+		pos= line.find('E')
+		host= line[pos+1:17]# further slicing to get date string
+		
+host1= None
+pos1=None		
+for line1 in x [21:24]:
+	if '2 DATE' in line1:
+		pos1 = line1.find('E')
+		host1= line1[pos1+1:17]
+
+
+convert_date= datetime.strptime (host,'%d %b %Y').date()
+convert_date1= datetime.strptime (host1, '%d %b %Y').date() #converting date string into actual date.time
+if (convert_date1 > convert_date): #comparing the two dates
+	print'Alexander was born on',host
+	print'Alexander died on',host1
+	print 'Alexander Was Born Before He Died'
