@@ -1,0 +1,6 @@
+Name of person is:  Alexander Bell
+He died on:  2 AUG 1922
+Name of person is:  Edward Bell
+He died on:  13 NOV 1931
+Name of person is:  Mary Bell
+She died on:  14 MAY 1934
